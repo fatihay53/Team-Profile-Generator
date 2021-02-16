@@ -17,28 +17,60 @@ const employees = []
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
- function addMember (){
+
+
+
+const numeric = async function (input){
+    var numbers = /^[0-9]+$/;
+    if (input.match(numbers) && input !== '') {
+    return true}
+    else{
+        return 'Please enter a Number!'
+    }
+}
+
+const letters = async function (input){
+    var letter = /^[A-Za-z]+$/;
+    if (input.match(letter) && input !=='' ){
+    return true}
+    else{ return'Please enter letter!'}
+}
+const email = async function (input){
+    if (input.includes("@") && input.includes(".") && input !=='' && !input.includes(' ') ){
+        return true
+    } 
+    else{
+        return 'Please enter a valid email! Includes "@" '
+    }
+}
+
+
+
+   
+
+function addMember() {
     inquirer.prompt(
         [
             {
-                type:'confirm',
-                message:'Do you want add another team Member?',
-                name:'anotherMember',
+                type: 'confirm',
+                message: 'Do you want add another team Member?',
+                name: 'anotherMember',
+              
             },
         ]
-    ).then( val =>{
-        if (val.anotherMember){
+    ).then(val => {
+        if (val.anotherMember) {
             aboutTeamMember()
         }
         else {
             finish()
         }
-        
-    } )
+
+    })
 }
 
-async function finish (){
-    const rendering = await render (employees)
+async function finish() {
+    const rendering = await render(employees)
     await writeFileAsync(outputPath, rendering);
 }
 
@@ -57,12 +89,13 @@ function aboutTeamMember() {
             },
 
         ]
-    ).then(val =>{
-        if (val.choice=== "Engineer"){
-            engineerDetail()   }
+    ).then(val => {
+        if (val.choice === "Engineer") {
+            engineerDetail()
+        }
         else {
-            internDetail() 
-        }  
+            internDetail()
+        }
     })
 }
 
@@ -72,30 +105,36 @@ function managerDetail() {
             {
                 type: 'input',
                 message: "What is the Manager's name?",
-                name: 'name'
+                name: 'name',
+                validate: letters
+
             },
             {
                 type: 'input',
                 message: "What is manager's ID?",
-                name: 'id'
+                name: 'id',
+                validate: numeric,
             },
             {
                 type: 'input',
                 message: "What is manager's email?",
-                name: 'email'
+                name: 'email',
+                validate: email,
+                
+                
             },
             {
                 type: 'input',
                 message: "What is the Manager's office number?",
-                name: 'officeNumber'
+                name: 'officeNumber',
+                validate: numeric,
             }
         ]
     )
-        // console.log(`manager detail${}`),
         .then(val => {
             const manager = new Manager(val.name, val.id, val.email, val.officeNumber)
             employees.push(manager)
-            addMember ()
+            addMember()
         }
         )
 }
@@ -108,17 +147,20 @@ function engineerDetail() {
             {
                 type: 'input',
                 message: "What is the Engineer's  name?",
-                name: 'name'
+                name: 'name',
+                validate: letters
             },
             {
                 type: 'input',
                 message: "What is Engineer's  ID?",
-                name: 'id'
+                name: 'id',
+                validate: numeric
             },
             {
                 type: 'input',
                 message: "What is Engineer's  email?",
-                name: 'email'
+                name: 'email',
+                validate: email,
             },
             {
                 type: 'input',
@@ -127,12 +169,12 @@ function engineerDetail() {
             }
         ]
     )
-    .then(val => {
-        const engineer = new Engineer(val.name, val.id, val.email, val.github)
-        employees.push(engineer)
-        addMember ()
-    }
-    )
+        .then(val => {
+            const engineer = new Engineer(val.name, val.id, val.email, val.github)
+            employees.push(engineer)
+            addMember()
+        }
+        )
 }
 
 function internDetail() {
@@ -141,36 +183,40 @@ function internDetail() {
             {
                 type: 'input',
                 message: "What is the Intern's  name?",
-                name: 'name'
+                name: 'name',
+                validate: letters
             },
             {
                 type: 'input',
                 message: "What is Intern's  ID?",
-                name: 'id'
+                name: 'id',
+                validate: numeric
             },
             {
                 type: 'input',
                 message: "What is Intern's  email?",
-                name: 'email'
+                name: 'email',
+                validate: email,
             },
             {
                 type: 'input',
                 message: "What is the Intern's School name?",
-                name: 'schoolName'
+                name: 'schoolName',
+                validate: letters
             }
         ]
     )
-    .then(val => {
-        const intern = new Intern(val.name, val.id, val.email, val.schoolName)
-        employees.push(intern)
-        addMember ()
-    }
-    )
+        .then(val => {
+            const intern = new Intern(val.name, val.id, val.email, val.schoolName)
+            employees.push(intern)
+            addMember()
+        }
+        )
 }
 
 async function init() {
     try {
-        await managerDetail() 
+        await managerDetail()
 
 
     } catch (err) {
