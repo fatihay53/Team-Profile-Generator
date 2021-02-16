@@ -42,9 +42,12 @@ THEN I exit the application, and the HTML is generated
 
 ## Mock-Up
 
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
+Mobile Responsive:
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
+![mobile responsive](./Assets/mobile.jpg  )
+
+Web:
+![HTML](./Assets/web.jpg)
 
 The styling in the image is just an example, so feel free to add your own.
 
