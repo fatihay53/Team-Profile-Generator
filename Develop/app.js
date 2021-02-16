@@ -18,7 +18,12 @@ const employees = []
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-
+const githubCheck = async function (input){
+    if (input === ''){
+        return 'Please enter a valid Github!'
+    }
+    return true;
+}
 
 const numeric = async function (input){
     var numbers = /^[0-9]+$/;
@@ -70,8 +75,11 @@ function addMember() {
 }
 
 async function finish() {
+    console.log('\n creating Your HTML File ...')
+
     const rendering = await render(employees)
     await writeFileAsync(outputPath, rendering);
+    console.log('file was created!')
 }
 
 
@@ -165,7 +173,8 @@ function engineerDetail() {
             {
                 type: 'input',
                 message: "What is the Engineer's GitHub username?",
-                name: 'github'
+                name: 'github',
+                validate: githubCheck
             }
         ]
     )
@@ -223,7 +232,7 @@ async function init() {
         console.log(err);
     }
 }
-init()
+init();
 
 
 
