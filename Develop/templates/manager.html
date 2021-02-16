@@ -1,13 +1,17 @@
-<div style="background-color: lightpink; border-radius: 15%;margin:7.5px" class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">{{ name }}</h2>
-        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>{{ role }}</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: {{ id }}</li>
-            <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
-            <li class="list-group-item">Office number: {{ officeNumber }}</li>
-        </ul>
+<div class="row" style="margin: auto; margin-bottom: 50px;">
+    <div class="col-12">
+        <div style="background-color: lightpink;width: 250px; border-radius: 15%" class="card employee-card">
+            <div class="card-header">
+                <h2 class="card-title">{{ name }}</h2>
+                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>{{ role }}</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: {{ id }}</li>
+                    <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
+                    <li class="list-group-item">Office number: {{ officeNumber }}</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

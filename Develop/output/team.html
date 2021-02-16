@@ -8,99 +8,68 @@
     <title>My Team</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 
 <body style="background-color: rgb(9, 11, 58) ;">
     <style>
-        .employee-card{
-            width: 800px !important;
+        li {
+            background-color: transparent !important;
+            color: black;
+            border: none !important;
         }
-
+        #header {
+            background-image: url('../../Assets/background.jpg ') !important;
+        }
+        
     </style>
-
-
-    <div style="background-color:rgb(9, 11, 58) ;" class="container-fluid">
+    <div  style="background-color:rgb(9, 11, 58) ;" class="container-fluid">
         <div class="row">
-            <div style="background-color: rgb(255, 255, 255) ;color: red;" class="col-12 jumbotron mb-3 team-heading">
+            <div id="header" style="color: red;" class="col-12 jumbotron mb-3 team-heading">
                 <h1 class="text-center">My Team</h1>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container d-flex justify-content-center">
         <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
-                <div style="background-color: lightpink; border-radius: 15%;margin:15px" class="card employee-card">
-                    <div class="card-header">
-                        <h2 class="card-title">asd</h2>
-                        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: 21</li>
-                            <li class="list-group-item">Email: <a href="mailto:asds@asdsa.">asds@asdsa.</a></li>
-                            <li class="list-group-item">Office number: 2121</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background-color: lightgreen ; border-radius: 15%;margin:15px" class="card employee-card">
-                    <div class="card-header">
-                        <h2 class="card-title">asd</h2>
-                        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
-                    </div>
-                    <div class="card-body ">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: 123</li>
-                            <li class="list-group-item">Email: <a href="mailto:fgg@adasd.">fgg@adasd.</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/asdqw" target="_blank"
-                                    rel="noopener noreferrer">asdqw</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background-color: lightgreen ; border-radius: 15%;margin:15px" class="card employee-card">
-                    <div class="card-header">
-                        <h2 class="card-title">sadas</h2>
-                        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
-                    </div>
-                    <div class="card-body ">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: 211313</li>
-                            <li class="list-group-item">Email: <a href="mailto:asds@asdas.">asds@asdas.</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/asdas" target="_blank"
-                                    rel="noopener noreferrer">asdas</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background-color:lightseagreen; border-radius: 15%;margin:15px" class="card employee-card">
-                    <div class="card-header">
-                        <h2 class="card-title">asd</h2>
-                        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: 2121</li>
-                            <li class="list-group-item">Email: <a href="mailto:asda@asdas.">asda@asdas.</a></li>
-                            <li class="list-group-item">School: asdqwdqw</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background-color:lightseagreen; border-radius: 15%;margin:15px" class="card employee-card">
-                    <div class="card-header">
-                        <h2 class="card-title">asd</h2>
-                        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>Intern</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: 12</li>
-                            <li class="list-group-item">Email: <a href="mailto:ASdw@asda.">ASdw@asda.</a></li>
-                            <li class="list-group-item">School: asda</li>
-                        </ul>
-                    </div>
-                </div>
-
+            <!-- <div class="team-area col-12 d-flex justify-content-center"> -->
+            <div class="row" style="margin: auto; margin-bottom: 50px;">
+    <div class="col-12">
+        <div style="background-color: lightpink;width: 250px; border-radius: 15%" class="card employee-card">
+            <div class="card-header">
+                <h2 class="card-title">asdsa</h2>
+                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: 123</li>
+                    <li class="list-group-item">Email: <a href="mailto:asdas@.">asdas@.</a></li>
+                    <li class="list-group-item">Office number: 123123</li>
+                </ul>
             </div>
         </div>
+    </div>
+</div><div class="row" style="margin: auto; margin-bottom: 50px;">
+    <div class="col-12">
+        <div style="background-color: lightgreen;width: 250px; border-radius: 15%;" class="card employee-card  ">
+            <div class="card-header">
+                <h2 class="card-title">asdasd</h2>
+                <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
+            </div>
+            <div class="card-body ">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: 123</li>
+                    <li class="list-group-item">Email: <a href="mailto:asdsa@.">asdsa@.</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/dasd" target="_blank"
+                            rel="noopener noreferrer">dasd</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
     </div>
 </body>
 
