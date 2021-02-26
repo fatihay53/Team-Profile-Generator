@@ -18,6 +18,20 @@ const employees = []
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+const letters = async function (input){
+    var letter = /^[A-Za-z]+$/;
+    if (input.match(letter) && input !=='' ){
+    return true}
+    else{ return'Please enter letter!'}
+}
+const email = async function (input){
+    if (input.includes("@") && input.includes(".") && input !=='' && !input.includes(' ') ){
+        return true
+    } 
+    else{
+        return 'Please enter a valid email! Includes "@" '
+    }
+}
 const githubCheck = async function (input){
     if (input === ''){
         return 'Please enter a valid Github!'
@@ -34,20 +48,6 @@ const numeric = async function (input){
     }
 }
 
-const letters = async function (input){
-    var letter = /^[A-Za-z]+$/;
-    if (input.match(letter) && input !=='' ){
-    return true}
-    else{ return'Please enter letter!'}
-}
-const email = async function (input){
-    if (input.includes("@") && input.includes(".") && input !=='' && !input.includes(' ') ){
-        return true
-    } 
-    else{
-        return 'Please enter a valid email! Includes "@" '
-    }
-}
 
 
 
